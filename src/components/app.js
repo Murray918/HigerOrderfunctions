@@ -6,6 +6,7 @@ export default class App extends Component {
     return (
       <div>
         <Header/>
+        {/* this is where we pass our components that will live inside of the header */}
         {this.props.children}
       </div>
     );

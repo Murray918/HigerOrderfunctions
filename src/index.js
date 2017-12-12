@@ -14,7 +14,9 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
+      {/* here is where we nest our component that needs to show based on authentication */}
       <Route path="/" component={App}>
+      {/* here is our nested component that we wrap inside of our higher order component */}
         <Route path="resources" component={requireAuth(Resources)}/>
       </Route>
     </Router>
